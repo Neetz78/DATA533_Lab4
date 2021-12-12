@@ -16,6 +16,7 @@ class TestVegEasy(unittest.TestCase):
     def setUp(self):
         self.x=pd.read_csv("Recipes.csv")
         TestVegEasy.a=ev.easy(self.x)
+        TestVegEasy.b=ev.steps(self.x)
     y = "Bread Milk Flour Rice Carrot Potato Brocolli Onion Cheese Oats Lentils Noodles Pasta Corn Spinach"
     @patch('builtins.input',return_value=y)
     def test_veg_select(self,mock_input):
@@ -51,11 +52,18 @@ class TestVegEasy(unittest.TestCase):
 
     k = ["https://www.loveandlemons.com/scrambled-eggs-recipe/ https://www.youtube.com/watch?v=yyi55ZrpJ0E"]
     @patch('builtins.input',return_value=k)  
-    def test_nonveg_display(self,mock_input):
+    def test_veg_display(self,mock_input):
         
         result3= TestVegEasy.a.display() 
         self.assertIn("https://www.loveandlemons.com/scrambled-eggs-recipe/ https://www.youtube.com/watch?v=yyi55ZrpJ0E", result3)
         
+        
+    l = "yes Yes YES y No no n NO"
+    @patch('builtins.input',return_value=l)  
+    def test_veg_seasy(self,mock_input):
+        
+        result4= TestVegEasy.b.seasy() 
+        self.assertIn("Yes", result4)
     def tearDown(self):
         print("Tear down")
 

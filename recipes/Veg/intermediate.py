@@ -90,3 +90,5 @@ class steps(medium):
                 n.mdisplay(self.x,medium.rec,medium.ind)
             else:
                 print("Happy cooking!")
+        
+        return medium.nut

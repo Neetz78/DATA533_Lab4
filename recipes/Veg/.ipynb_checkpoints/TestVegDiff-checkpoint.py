@@ -16,6 +16,7 @@ class TestVegDifficult(unittest.TestCase):
     def setUp(self):
         self.x=pd.read_csv("Recipes.csv")
         TestVegDifficult.a=dv.difficult(self.x)
+        TestVegDifficult.b=dv.steps(self.x)
     y = "Bread Milk Flour Rice Carrot Potato Brocolli Onion Cheese Oats Lentils Noodles Pasta Corn Spinach"
     @patch('builtins.input',return_value=y)
     def test_veg_select(self,mock_input):
@@ -52,10 +53,17 @@ class TestVegDifficult(unittest.TestCase):
 
     k = ["https://www.indianhealthyrecipes.com/egg-biryani-recipe-how-to-make-easy-egg-biryani/ https://www.youtube.com/watch?v=5VapbxkA_UA"]
     @patch('builtins.input',return_value=k)  
-    def test_nonveg_display(self,mock_input):
+    def test_veg_display(self,mock_input):
         
         result3= TestVegDifficult.a.display() 
         self.assertIn("https://www.indianhealthyrecipes.com/egg-biryani-recipe-how-to-make-easy-egg-biryani/ https://www.youtube.com/watch?v=5VapbxkA_UA", result3)
+        
+    l = "yes Yes YES y No no n NO"
+    @patch('builtins.input',return_value=l)  
+    def test_veg_sdiff(self,mock_input):
+        
+        result4= TestVegDifficult.b.sdiff() 
+        self.assertIn("Yes", result4)
         
     def tearDown(self):
         print("Tear down")

@@ -87,3 +87,5 @@ class steps(difficult):
                 n.ddisplay(self.x,difficult.rec,difficult.ind)
             else:
                 print("Happy cooking!")
+        
+        return difficult.nut

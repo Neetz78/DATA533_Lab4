@@ -17,6 +17,8 @@ class TestVegMedium(unittest.TestCase):
     def setUp(self):
         self.x=pd.read_csv("Recipes.csv")
         TestVegMedium.a=mv.medium(self.x)
+        TestVegMedium.b=mv.steps(self.x)
+
     y = "Bread Milk Flour Rice Carrot Potato Brocolli Onion Cheese Oats Lentils Noodles Pasta Corn Spinach"
     @patch('builtins.input',return_value=y)
     def test_veg_select(self,mock_input):
@@ -52,10 +54,17 @@ class TestVegMedium(unittest.TestCase):
         
     k = ["https://downshiftology.com/recipes/poached-eggs/ https://www.youtube.com/watch?v=yifZtA3uF-E"]
     @patch('builtins.input',return_value=k)  
-    def test_nonveg_display(self,mock_input):
+    def test_veg_display(self,mock_input):
         
         result3= TestVegMedium.a.display() 
         self.assertIn("https://downshiftology.com/recipes/poached-eggs/ https://www.youtube.com/watch?v=yifZtA3uF-E", result3)
+    
+    l = "yes Yes YES y No no n NO"
+    @patch('builtins.input',return_value=l)  
+    def test_veg_smedium(self,mock_input):
+        
+        result4= TestVegMedium.b.smedium() 
+        self.assertIn("Yes", result4)
     
     def tearDown(self):
         print("Tear down")

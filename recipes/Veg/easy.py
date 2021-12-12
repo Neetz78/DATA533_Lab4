@@ -91,6 +91,7 @@ class steps(easy):
                 n.edisplay(self.x,easy.rec,easy.ind)
             else:
                 print("Happy cooking!")
+        return easy.nut
     
          
         
