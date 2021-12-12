@@ -50,10 +50,7 @@ class easy:
                 if easy.rec==i:
                     easy.ind=self.x[self.x['R1'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y1[easy.ind].split(" ")[0], "\n")
-                    print("Youtube video link: ",self.x.Y1[easy.ind].split(" ")[1], "\n")
-                    
-
-                    
+                    print("Youtube video link: ",self.x.Y1[easy.ind].split(" ")[1], "\n")            
         for i in self.x.R2:
                 if easy.rec==i:
                     easy.ind=self.x[self.x['R2'] == i].index.item()

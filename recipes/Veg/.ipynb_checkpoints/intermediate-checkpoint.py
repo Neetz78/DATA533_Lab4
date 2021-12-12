@@ -49,9 +49,7 @@ class medium:
                 if medium.rec==i:
                     medium.ind=self.x[self.x['R3'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y3[medium.ind].split(" ")[0], "\n")
-                    print("Youtube video link: ",self.x.Y3[medium.ind].split(" ")[1], "\n")
-
-                    
+                    print("Youtube video link: ",self.x.Y3[medium.ind].split(" ")[1], "\n")        
         for i in self.x.R4:
                 if medium.rec==i:
                     medium.ind=self.x[self.x['R4'] == i].index.item()

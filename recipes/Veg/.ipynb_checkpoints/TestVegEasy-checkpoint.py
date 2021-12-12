@@ -39,7 +39,8 @@ class TestVegEasy(unittest.TestCase):
         self.assertIn("Carrot Salad", result2)
         self.assertIn("Garlic bread", result2)
         self.assertIn("Flavoured rice", result2)
-    z = ["Easy", "Medium", "Hard", "easy", "medium", "hard", "EASY", "MEDIUM", "HARD", "e", "m" ,"h", "eas", "med", "hrd"]
+        
+    z = ["Easy", "Medium", "Hard", "easy", "medium", "hard", "EASY", "MEDIUM", "HARD", "e", "m" ,"h", "eas", "med", "hrd","x"]
     @patch('builtins.input',return_value=z)
         
     def test_veg_level(self,mock_input):
@@ -49,6 +50,8 @@ class TestVegEasy(unittest.TestCase):
         self.assertIn("EASY", result)
         self.assertIn("e", result)
         self.assertIn("eas", result)
+        self.assertIn("HARD", result)
+
 
     k = ["https://www.loveandlemons.com/scrambled-eggs-recipe/ https://www.youtube.com/watch?v=yyi55ZrpJ0E"]
     @patch('builtins.input',return_value=k)  

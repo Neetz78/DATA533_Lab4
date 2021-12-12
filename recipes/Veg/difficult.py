@@ -1,7 +1,6 @@
 '''This module is for the difficult recipes. 
 It contains class difficult with select,search and display functions. 
 The class steps inherits from class difficult'''
-
 from recipes.Veg import nutrition as n
 class difficult:
     ''' The difficult class contains 3 functions used to select, search and display the recipe.
@@ -10,7 +9,8 @@ class difficult:
         r (list): Contains recipes names for the ingredients chosen by the user
         rec (str): Contains the recipe of the user chosen dish
         ind (int): Used for fetching index of the dish chosen by the user from the data.
-        nut (str): Used for storing if nutrition value is to be displayed.'''
+        nut (str): Used for storing if nutrition value is to be displayed.
+    '''
     v=[]
     r=[]
     rec=""
@@ -28,7 +28,8 @@ class difficult:
         print("Please select from the below ingredients:\n")
         difficult.v=[item for item in input(f"{self.x.I[1],self.x.I[2],self.x.I[3],self.x.I[4],self.x.I[7],self.x.I[8],self.x.I[9],self.x.I[10],self.x.I[11],self.x.I[12],self.x.I[13],self.x.I[14],self.x.I[15],self.x.I[16],self.x.I[18]}:").split()]
         return difficult.v
-    
+
+
     def search(self):
         '''Searches and promts user to choose dishes from list r and stores the string entered by user in rec
         '''
@@ -45,20 +46,23 @@ class difficult:
     def display(self):
         ''' Displays the blog and youtube link for the user chosen recipe
         '''
-        for i in self.x.R5:
+        for i in self.x.R1:
                 if difficult.rec==i:
                     difficult.ind=self.x[self.x['R5'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y5[difficult.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y5[difficult.ind].split(" ")[1], "\n")
+                    
 
                     
-        for i in self.x.R6:
+        for i in self.x.R2:
                 if difficult.rec==i:
                     difficult.ind=self.x[self.x['R6'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y6[difficult.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y6[difficult.ind].split(" ")[1], "\n")
                     
-        return self.x.Y6[difficult.ind]          
+        return self.x.Y6[difficult.ind]
+
+                   
     
 class steps(difficult):
     '''Class for executing the steps. Contains 2 functions
@@ -87,5 +91,4 @@ class steps(difficult):
                 n.ddisplay(self.x,difficult.rec,difficult.ind)
             else:
                 print("Happy cooking!")
-        
         return difficult.nut

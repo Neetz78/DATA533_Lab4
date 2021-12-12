@@ -34,15 +34,13 @@ class TestNonVegDifficult(unittest.TestCase):
     x=["Devils eggs","Egg Biryani","Chicken Biryani","Chicken lollipop","Sushi","Lebanese fish","Lamb ribs","BBQ Lamb", "Mediterranean shrimp","Shrimp skewers"]
     @patch('builtins.input',return_value=x)
     def test_nonveg_search(self,mock_input):
-        
         result2= TestNonVegDifficult.a.search()  
+        
         self.assertIn("Devils eggs", result2)
-        self.assertIn("Shrimp skewers", result2)
         self.assertIn("Chicken lollipop", result2)
-        self.assertIn("Sushi", result2)
+        self.assertIn("Lebanese fish", result2)
         self.assertIn("Lamb ribs", result2)
-        self.assertIn("BBQ Lamb", result2)
-        self.assertIn("Chicken Biryani", result2)
+        self.assertIn("Mediterranean shrimp", result2)
      
 
         
