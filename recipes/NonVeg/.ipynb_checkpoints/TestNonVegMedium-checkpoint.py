@@ -16,6 +16,7 @@ class TestNonVegMedium(unittest.TestCase):
     def setUp(self):
         self.x=pd.read_csv("Recipes.csv")
         TestNonVegMedium.a=mnv.medium(self.x)
+        TestNonVegMedium.b=mnv.steps(self.x)
     y = "Chicken Eggs Fish Lamb Shrimp"
     @patch('builtins.input',return_value=y)
     def test_nonveg_select(self,mock_input):
@@ -58,6 +59,13 @@ class TestNonVegMedium(unittest.TestCase):
         
         result3= TestNonVegMedium.a.display() 
         self.assertIn("https://www.cookinglight.com/recipes/pristine-sunny-side-up-eggs https://www.youtube.com/watch?v=hS0AEh8fxiM", result3)
+        
+    l = "yes Yes YES y No no n NO"
+    @patch('builtins.input',return_value=l)  
+    def test_nonveg_smedium(self,mock_input):
+        
+        result4= TestNonVegMedium.b.smedium() 
+        self.assertIn("Yes", result4)
         
     def tearDown(self):
         print("Tear down")

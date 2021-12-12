@@ -59,6 +59,8 @@ class medium:
                     print("Recipe blog link: ",self.x.Y4[medium.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y4[medium.ind].split(" ")[1], "\n")
                     
+        return self.x.Y3[medium.ind]
+                    
 class steps(medium):
     '''Class for executing the steps. Contains 2 functions
     '''
@@ -87,3 +89,4 @@ class steps(medium):
                 n.mdisplay(self.x,medium.rec,medium.ind)
             else:
                 print("Happy cooking!")
+        return medium.nut

@@ -8,6 +8,7 @@ class TestNonVegEasy(unittest.TestCase):
     def setUp(self):
         self.x=pd.read_csv("Recipes.csv")
         TestNonVegEasy.a=env.easy(self.x)
+        TestNonVegEasy.b=env.steps(self.x)
     y = "Chicken Egg Fish Lamb Shrimp"
     @patch('builtins.input',return_value=y)
     def test_nonveg_select(self,mock_input):
@@ -49,6 +50,13 @@ class TestNonVegEasy(unittest.TestCase):
         
         result3= TestNonVegEasy.a.display() 
         self.assertIn("https://www.simplyrecipes.com/recipes/how_to_make_perfect_hard_boiled_eggs/ https://www.youtube.com/watch?v=3CnAQzEiuvQ", result3)
+    
+    l = "yes Yes YES y No no n NO"
+    @patch('builtins.input',return_value=l)  
+    def test_nonveg_seasy(self,mock_input):
+        
+        result4= TestNonVegEasy.b.seasy() 
+        self.assertIn("Yes", result4)
         
     def tearDown(self):
         print("Tear down")

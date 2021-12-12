@@ -42,11 +42,7 @@ class difficult:
                     difficult.r.append(self.x.R6[a])
         print("Choose one dish from below choices:\n")
         difficult.rec=input(f"{difficult.r}:")
-        if (difficult.rec not in difficult.r):
-            print("You did not choose the right dish")
-            return difficult.rec
-        else:
-            return difficult.rec
+        return difficult.rec
         
     def display(self):
         ''' Displays the blog and youtube link for the user chosen recipe
@@ -92,3 +88,4 @@ class steps(difficult):
                 n.ddisplay(self.x,difficult.rec,difficult.ind)
             else:
                 print("Happy cooking!")
+        return difficult.nut

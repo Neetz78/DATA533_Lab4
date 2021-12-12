@@ -15,8 +15,7 @@ def level():
         if level.isdigit():
             raise LevelIsNumber()
         elif level not in ["Easy","easy","e","EASY","eas","Medium","medium","m","MEDIUM","med","Hard","hard","h","HARD","hrd"]:
-            raise LevelIsInvalid()
-        
+            raise LevelIsInvalid()      
     except LevelIsNumber:
         print("The level entered is a number. Kindly re-enter.")
     except LevelIsInvalid:

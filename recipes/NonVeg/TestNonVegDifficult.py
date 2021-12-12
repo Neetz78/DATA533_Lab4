@@ -17,6 +17,7 @@ class TestNonVegDifficult(unittest.TestCase):
     def setUp(self):
         self.x=pd.read_csv("Recipes.csv")
         TestNonVegDifficult.a=dnv.difficult(self.x)
+        TestNonVegDifficult.b=dnv.steps(self.x)
         
     y = "Chicken Egg Fish Lamb Shrimp"
     @patch('builtins.input',return_value=y)
@@ -35,11 +36,13 @@ class TestNonVegDifficult(unittest.TestCase):
     def test_nonveg_search(self,mock_input):
         
         result2= TestNonVegDifficult.a.search()  
-        self.assertIn("BBQ Lamb", result2)
+        self.assertIn("Devils eggs", result2)
         self.assertIn("Shrimp skewers", result2)
         self.assertIn("Chicken lollipop", result2)
         self.assertIn("Sushi", result2)
         self.assertIn("Lamb ribs", result2)
+        self.assertIn("BBQ Lamb", result2)
+        self.assertIn("Chicken Biryani", result2)
      
 
         
@@ -60,15 +63,14 @@ class TestNonVegDifficult(unittest.TestCase):
         
         result3= TestNonVegDifficult.a.display() 
         self.assertIn("https://www.foodnetwork.com/recipes/classic-deviled-eggs-recipe-1911032 https://www.youtube.com/watch?v=KmzbiuW4r1I", result3)
-    
-
-    
+        
+    l = "yes Yes YES y No no n NO"
+    @patch('builtins.input',return_value=l)  
+    def test_nonveg_sdiff(self,mock_input):
+        
+        result4= TestNonVegDifficult.b.sdiff() 
+        self.assertIn("Yes", result4)
+        
     def tearDown(self):
         print("Tear down")
-        
-    
-    
-        
-
-
 unittest.main(argv=[''], verbosity=2, exit=False)
