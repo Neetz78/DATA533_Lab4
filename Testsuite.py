@@ -1,12 +1,12 @@
 import unittest
-from recipes.Veg.TestVegNut import TestNutrition  
-from recipes.NonVeg.TestNonVegNut import TestNonNutrition 
-from recipes.Veg.TestVegEasy import TestVegEasy 
-from recipes.NonVeg.TestNonVegEasy import TestNonVegEasy 
-from recipes.Veg.TestVegMedium import TestVegMedium 
-from recipes.NonVeg.TestNonVegMedium import TestNonVegMedium 
-from recipes.Veg.TestVegDiff import TestVegDifficult 
-from recipes.NonVeg.TestNonVegDifficult import TestNonVegDifficult
+from DNRecipe.Veg.TestVegNut import TestNutrition  
+from DNRecipe.NonVeg.TestNonVegNut import TestNonNutrition 
+from DNRecipe.Veg.TestVegEasy import TestVegEasy 
+from DNRecipe.NonVeg.TestNonVegEasy import TestNonVegEasy 
+from DNRecipe.Veg.TestVegMedium import TestVegMedium 
+from DNRecipe.NonVeg.TestNonVegMedium import TestNonVegMedium 
+from DNRecipe.Veg.TestVegDiff import TestVegDifficult 
+from DNRecipe.NonVeg.TestNonVegDifficult import TestNonVegDifficult
 
 
 def my_suite():
