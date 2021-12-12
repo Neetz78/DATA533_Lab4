@@ -34,20 +34,20 @@ def recipe():
 
     data = pd.read_csv("Recipes.csv",encoding = "ISO-8859-1", engine='python')
 
-    print("Please select your food preference or type exit to exit")
+    print("Please select your food preference or type x to exit")
     
     try:
         perf = input("Vegetarian or Non-Vegetarian:")
         
         if perf.isdigit():
             raise InputIsNumberError()
-        elif perf not in ["Vegetarian","Veg","veg","vegetarian","Non-Vegetarian","Non-Veg","nonveg","nonvegetarian" ,"NonVegetarian","Nonveg", "exit","Exit"]:
+        elif perf not in ["Vegetarian","Veg","veg","vegetarian","Non-Vegetarian","Non-Veg","nonveg","nonvegetarian" ,"NonVegetarian","Nonveg", "x"]:
             raise InputInvalidError()
         
     except InputIsNumberError:
-        print("The preference entered is a number. Kindly re-enter or type exit to exit")
+        print("The preference entered is a number. Kindly re-enter or type x to exit")
     except InputInvalidError:
-        print("Please enter a valid preference. Kindly re-enter or type exit to exit")
+        print("Please enter a valid preference. Kindly re-enter or type x to exit")
         
         
     else:
@@ -60,7 +60,7 @@ def recipe():
             elif (lev == "Medium" or lev == "medium" or lev == "m" or lev == "MEDIUM" or lev== "med"):
                 a=i.steps(data)
                 a.smedium()
-            elif (lev == "Hard" or lev == "hard" or lev == "d" or lev == "HARD" or lev=="hrd"):
+            elif (lev == "Hard" or lev == "hard" or lev == "h" or lev == "HARD" or lev=="hrd"):
                 a=d.steps(data)
                 a.sdiff()
             else:
@@ -68,13 +68,13 @@ def recipe():
     
         elif (perf == "Non-Vegetarian" or perf == "Non-Veg" or perf == "nonveg" or perf == "nonvegetarian" or perf == "NonVegetarian" or perf == "Nonveg"):
             nlev = nveg.level()
-            if (nlev == "Easy" or nlev == "easy" or nlev == "e" or nlev == "EASY"):
+            if (nlev == "Easy" or nlev == "easy" or nlev == "e" or nlev == "EASY" or nlev=="eas"):
                 a=ne.steps(data)
                 a.seasy()
-            elif (nlev == "Medium" or nlev == "medium" or nlev == "m" or nlev == "MEDIUM"):
+            elif (nlev == "Medium" or nlev == "medium" or nlev == "m" or nlev == "MEDIUM"or nlev== "med"):
                 a=ni.steps(data)
                 a.smedium()
-            elif (nlev == "Hard" or nlev == "hard" or nlev == "d" or nlev == "HARD"):
+            elif (nlev == "Hard" or nlev == "hard" or nlev == "h" or nlev == "HARD" or nlev=="hrd"):
                 a=nd.steps(data)
                 a.sdiff()
             else:
@@ -83,7 +83,7 @@ def recipe():
             pass
         
     finally:
-        if perf != "exit":
+        if perf != "x":
             recipe()
     
     
