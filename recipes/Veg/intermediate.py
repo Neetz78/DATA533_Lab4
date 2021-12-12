@@ -76,8 +76,16 @@ class steps(medium):
         self.search()
         self.display()
         print("Do you want to know the calorie count?\n")
-        medium.nut=input("Yes or No")
-        if medium.nut=="Yes":
-            n.mdisplay(self.x,medium.rec,medium.ind)
-        else:
-            print("Happy cooking!")
+        try:
+            medium.nut=input("Yes or No")
+            if medium.nut.isdigit():
+                raise
+            elif medium.nut not in ["yes", "Yes", "YES", "y", "No","no","n","NO"]:
+                raise
+        except:
+            print("The entered input is invalid")
+        finally:
+            if medium.nut in ["yes", "Yes", "YES", "y"]:
+                n.mdisplay(self.x,medium.rec,medium.ind)
+            else:
+                print("Happy cooking!")

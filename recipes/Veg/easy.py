@@ -78,11 +78,19 @@ class steps(easy):
         self.search()
         self.display()
         print("Do you want to know the calorie count?\n")
-        easy.nut=input("Yes or No")
-        if easy.nut=="Yes":
-            n.edisplay(self.x,easy.rec,easy.ind)
-        else:
-            print("Happy cooking!")
+        try:
+            easy.nut=input("Yes or No")
+            if easy.nut.isdigit():
+                raise
+            elif easy.nut not in ["yes", "Yes", "YES", "y", "No","no","n","NO"]:
+                raise
+        except:
+            print("The entered input is invalid")
+        finally:
+            if easy.nut in ["yes", "Yes", "YES", "y"]:
+                n.edisplay(self.x,easy.rec,easy.ind)
+            else:
+                print("Happy cooking!")
     
          
         
