@@ -57,6 +57,7 @@ class medium:
                     medium.ind=self.x[self.x['R4'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y4[medium.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y4[medium.ind].split(" ")[1], "\n")
+        return self.x.Y4[medium.ind]
                     
                    
     

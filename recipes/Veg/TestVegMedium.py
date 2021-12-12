@@ -49,6 +49,13 @@ class TestVegMedium(unittest.TestCase):
         self.assertIn("MEDIUM", result)
         self.assertIn("medium", result)
         self.assertIn("med", result)
+        
+    k = ["https://downshiftology.com/recipes/poached-eggs/ https://www.youtube.com/watch?v=yifZtA3uF-E"]
+    @patch('builtins.input',return_value=k)  
+    def test_nonveg_display(self,mock_input):
+        
+        result3= TestVegMedium.a.display() 
+        self.assertIn("https://downshiftology.com/recipes/poached-eggs/ https://www.youtube.com/watch?v=yifZtA3uF-E", result3)
     
     def tearDown(self):
         print("Tear down")

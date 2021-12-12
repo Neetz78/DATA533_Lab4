@@ -58,7 +58,7 @@ class difficult:
                     print("Recipe blog link: ",self.x.Y6[difficult.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y6[difficult.ind].split(" ")[1], "\n")
                     
-                   
+        return self.x.Y6[difficult.ind]          
     
 class steps(difficult):
     '''Class for executing the steps. Contains 2 functions

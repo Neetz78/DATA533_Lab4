@@ -54,6 +54,13 @@ class TestNonVegDifficult(unittest.TestCase):
         self.assertIn("h", result)
         self.assertIn("hrd", result)
         
+    k = ["https://www.foodnetwork.com/recipes/classic-deviled-eggs-recipe-1911032 https://www.youtube.com/watch?v=KmzbiuW4r1I"]
+    @patch('builtins.input',return_value=k)  
+    def test_nonveg_display(self,mock_input):
+        
+        result3= TestNonVegDifficult.a.display() 
+        self.assertIn("https://www.foodnetwork.com/recipes/classic-deviled-eggs-recipe-1911032 https://www.youtube.com/watch?v=KmzbiuW4r1I", result3)
+    
 
     
     def tearDown(self):

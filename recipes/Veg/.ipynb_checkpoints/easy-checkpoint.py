@@ -51,7 +51,7 @@ class easy:
                     easy.ind=self.x[self.x['R1'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y1[easy.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y1[easy.ind].split(" ")[1], "\n")
-                    return self.x.Y1[easy.ind]
+                    
 
                     
         for i in self.x.R2:
@@ -59,8 +59,8 @@ class easy:
                     easy.ind=self.x[self.x['R2'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y2[easy.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y2[easy.ind].split(" ")[1], "\n")
-                    return self.x.Y2[easy.ind]
-        
+                    
+        return self.x.Y2[easy.ind]
 
                    
     

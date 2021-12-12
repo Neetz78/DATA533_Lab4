@@ -42,6 +42,13 @@ class TestNonVegEasy(unittest.TestCase):
         self.assertIn("EASY", result)
         self.assertIn("e", result)
         self.assertIn("eas", result)
+    
+    k = ["https://www.simplyrecipes.com/recipes/how_to_make_perfect_hard_boiled_eggs/ https://www.youtube.com/watch?v=3CnAQzEiuvQ"]
+    @patch('builtins.input',return_value=k)  
+    def test_nonveg_display(self,mock_input):
+        
+        result3= TestNonVegEasy.a.display() 
+        self.assertIn("https://www.simplyrecipes.com/recipes/how_to_make_perfect_hard_boiled_eggs/ https://www.youtube.com/watch?v=3CnAQzEiuvQ", result3)
         
     def tearDown(self):
         print("Tear down")

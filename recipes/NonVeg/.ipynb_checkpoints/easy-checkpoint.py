@@ -58,7 +58,7 @@ class easy:
                     easy.ind=self.x[self.x['R2'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y2[easy.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y2[easy.ind].split(" ")[1], "\n")
-                    
+        return self.x.Y1[easy.ind]
                     
 class steps(easy):
     '''Class for executing the steps. Contains 2 functions

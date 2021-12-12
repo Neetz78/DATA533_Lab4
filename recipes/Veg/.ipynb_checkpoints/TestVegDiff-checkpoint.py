@@ -49,6 +49,13 @@ class TestVegDifficult(unittest.TestCase):
         self.assertIn("HARD", result)
         self.assertIn("h", result)
         self.assertIn("hrd", result)
+
+    k = ["https://www.indianhealthyrecipes.com/egg-biryani-recipe-how-to-make-easy-egg-biryani/ https://www.youtube.com/watch?v=5VapbxkA_UA"]
+    @patch('builtins.input',return_value=k)  
+    def test_nonveg_display(self,mock_input):
+        
+        result3= TestVegDifficult.a.display() 
+        self.assertIn("https://www.indianhealthyrecipes.com/egg-biryani-recipe-how-to-make-easy-egg-biryani/ https://www.youtube.com/watch?v=5VapbxkA_UA", result3)
         
     def tearDown(self):
         print("Tear down")

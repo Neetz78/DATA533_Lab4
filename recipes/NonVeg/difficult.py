@@ -42,7 +42,11 @@ class difficult:
                     difficult.r.append(self.x.R6[a])
         print("Choose one dish from below choices:\n")
         difficult.rec=input(f"{difficult.r}:")
-        return difficult.rec
+        if (difficult.rec not in difficult.r):
+            print("You did not choose the right dish")
+            return difficult.rec
+        else:
+            return difficult.rec
         
     def display(self):
         ''' Displays the blog and youtube link for the user chosen recipe
@@ -59,7 +63,8 @@ class difficult:
                     difficult.ind=self.x[self.x['R6'] == i].index.item()
                     print("Recipe blog link: ",self.x.Y6[difficult.ind].split(" ")[0], "\n")
                     print("Youtube video link: ",self.x.Y6[difficult.ind].split(" ")[1], "\n")
-                    
+        return self.x.Y5[difficult.ind]
+                
 class steps(difficult):
     '''Class for executing the steps. Contains 2 functions
     '''

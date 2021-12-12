@@ -52,6 +52,13 @@ class TestNonVegMedium(unittest.TestCase):
         self.assertIn("medium", result)
         self.assertIn("med", result)
         
+    k = ["https://www.cookinglight.com/recipes/pristine-sunny-side-up-eggs https://www.youtube.com/watch?v=hS0AEh8fxiM"]
+    @patch('builtins.input',return_value=k)  
+    def test_nonveg_display(self,mock_input):
+        
+        result3= TestNonVegMedium.a.display() 
+        self.assertIn("https://www.cookinglight.com/recipes/pristine-sunny-side-up-eggs https://www.youtube.com/watch?v=hS0AEh8fxiM", result3)
+        
     def tearDown(self):
         print("Tear down")
         
